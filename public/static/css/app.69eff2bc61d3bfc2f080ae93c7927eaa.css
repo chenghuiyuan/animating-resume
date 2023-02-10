@@ -1,13 +1,13 @@
 
 #app[data-v-288975d1] {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 html[data-v-288975d1] {
   min-height: 100vh;
 }
-*[data-v-288975d1]{
+*[data-v-288975d1] {
   box-sizing: border-box;
 }
 
@@ -36,10 +36,41 @@ to {
     opacity: 1;
 }
 }
-*{margin: 0; padding: 0;}
-*{box-sizing: border-box;}
-*::before{box-sizing: border-box;}
-*::after{box-sizing: border-box;}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::before {
+  box-sizing: border-box;
+}
+
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color: rgb(222, 222, 222);
+  background: rgb(0, 43, 54);
+  perspective: 1000px;
+  padding-left: 100px;
+  padding-top: 50px;
+  font-size: 15px;
+}
+
+.token.selector {
+  color: rgb(42, 161, 152);
+}
+
+.token.punctuation {
+  color: rgb(187, 137, 0);
+}
+
+
 #app[data-v-b76f4cbc] {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -54,4 +85,4 @@ html[data-v-b76f4cbc] {
 }
 
 
-/*# sourceMappingURL=app.121ce650a966130fb0f2ffacb130b3de.css.map*/
+/*# sourceMappingURL=app.69eff2bc61d3bfc2f080ae93c7927eaa.css.map*/
