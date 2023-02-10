@@ -18,148 +18,61 @@
     },
     data() {
       return {
-        interval: 40,
+        interval: 10,
         currentStyle: '',
         enableHtml: false,
         fullStyle: [
           `/*
-* Inspired by http://strml.net/
-* 大家好，我是方方
-* 二月了，好多公司都在招聘
-* 你是不是也在准备简历呀。
-* 说做就做，我也来写一份简历！
-*/
-
-/* 首先给所有元素加上过渡效果 */
-* {
-  transition: all .3s;
-}
-/* 白色背景太单调了，我们来点背景 */
-html {
-  color: rgb(222,222,222);
-  background: rgb(0,43,54);
-}
-/* 文字离边框太近了 */
-.styleEditor {
-  padding: .5em;
-  border: 1px solid;
-  overflow: auto;
-  width: 90vw;
-  margin: 2.5vh 5vw;
-  height: 90vh;
-}
-/* 太高了 */
-.styleEditor {
-  height: 45vh;
-}
-/* 代码高亮 */
-.token.selector{
-  color: rgb(133,153,0);
-}
-.token.property{
-  color: rgb(187,137,0);
-}
-.token.punctuation{
-  color: yellow;
-}
-.token.function{
-  color: rgb(42,161,152);
-}
-
-/* 加点 3D 效果呗 */
-html{
-  perspective: 1000px;
-}
-.styleEditor {
-  position: fixed; left: 0; top: 0;
-  transform: rotateX(-10deg) translateZ(-50px) ;
-}
-
-/* 接下来我给自己准备一个编辑器 */
-.resumeEditor{
-  position: fixed;
-  top: 50%; left: 0;
-  padding: .5em;  margin: 2.5vh;
-  width: 95vw; height: 45vh;
-  border: 1px solid;
-  background: white; color: #222;
-  overflow: auto;
-}
-/* 好了，我开始写简历了 */
+const name = 'Nova Cheng';
+const contactNumber = '+65 9725 0275'; // whatsapp please
+const email = 'chy.huiyuan@gmail.com';
+const githubAccount = 'https://github.com/chenghuiyuan';
+const stackoverflowAccount = 'https://stackoverflow.com/users/11929921/cheng-hui-yuan';
 
 
-`,
-          `
-/* 这个简历好像差点什么
- * 对了，这是 Markdown 格式的，我需要变成对 HR 更友好的格式
- * 简单，用开源工具翻译成 HTML 就行了
- */
-`
-          ,
-          `
-/* 再对 HTML 加点样式 */
-.resumeEditor{
-  padding: 2em;
+function workExperience() {
+    return {
+        'Dec 2021 to Current' : 
+        {'Senior Software Engineer @ A5Tec (Fei Siong Group)': 
+        ['Tech lead for Android-based POS system (flutter, kotlin, sqlite): 3 engineers', 
+        'Tech lead for Tap-A-Meal project (react native, express js, mysql): 2 engineers',
+        "Key responsibilities: managing development timeline, code review, software architecture, deployment"]},
+
+        'Sep 2020 to Dec 2021' : 
+        {'Software Engineer @ A5Tec (Fei Siong Group)': 
+        ['Key member in Agile team to develop internal web-based POS system (python, postgresql, mongoDB)',
+        'Key contributor in Agile team to develop e-commerce platform for bulk purchase (react, mysql)']},
+
+        'April 2020 to Sep 2020':
+        {'Programmer @ Zetta Solutions': 
+        ['Developed food-ordering system from scratch for restaurant (php, vanilla js, css, mysql)',
+        'Developed new features for ERP systems for multiple clients (php, Vanilla js, css, mysql)']},
+
+        'Dec 2019 to April 2020':
+        {'Software Engineer Intern @ Thales': 
+        ['Refactored digital identity mobile app (react native, hyperledger blockchain)',
+        'Developed mobile app POC (flutter, hyperledger blockchain)']},
+
+        'July 2019 to Dec 2019': 
+        {'Web Development Intern @ Philips Electronics': 
+        ['Developed new features for task management system (laravel, vue js, jquery, css, mysql, apache)',
+        'Collaborated with external vendor to connect IoT device to mysql database (python)']}
+    };
 }
-.resumeEditor h2{
-  display: inline-block;
-  border-bottom: 1px solid;
-  margin: 1em 0 .5em;
-}
-.resumeEditor ul,.resumeEditor ol{
-  list-style: none;
-}
-.resumeEditor ul> li::before{
-  content: '•';
-  margin-right: .5em;
-}
-.resumeEditor ol {
-  counter-reset: section;
-}
-.resumeEditor ol li::before {
-  counter-increment: section;
-  content: counters(section, ".") " ";
-  margin-right: .5em;
-}
-.resumeEditor blockquote {
-  margin: 1em;
-  padding: .5em;
-  background: #ddd;
+
+function education() {
+    return {
+        '2018 to 2022': 
+        {'Bachelor of Technology (Hons) in Software Engineering @ National University of Singapore': 
+        {"Dean's List": ['2019/2020 Sem 2']}},  
+        '2014 - 2017': 
+        {'Diploma in Food Science and Nutrition @ Nanyang Polytechnic':
+        {"Director's List": ['Year 1 Sem 1','Year 1 Sem 2', 'Year 2 Sem 1', 'Year 2 Sem 2', 'Year 3 Sem 2']}
+        }
+    };
 }
 `],
-        currentMarkdown: '',
-        fullMarkdown: `方应杭
-----
-
-资深前端工程师，资深前端讲师
-现在在 [饥人谷](http://jirengu.com) 教前端课程。
-
-技能
-----
-
-* 前端开发
-* Rails 开发
-* Node.js 开发
-* 前端授课
-
-工作经历
-----
-
-1. [饥人谷](http://jirengu.com)
-2. 腾讯即时通讯平台部
-3. 阿里巴巴B2B部门
-4. 彩程知人项目组
-
-链接
-----
-
-* [GitHub](https://github.com/frankfang)
-* [我的文章](https://www.zhihu.com/people/zhihusucks/pins/posts)
-
-> 如果你喜欢这个效果，
-Fork [我的项目](https://github.com/jirengu-inc/animating-resume)，打造你自己的简历！
-
-`
+        
       }
     },
     created() {
@@ -169,10 +82,10 @@ Fork [我的项目](https://github.com/jirengu-inc/animating-resume)，打造你
     methods: {
       makeResume: async function () {
         await this.progressivelyShowStyle(0)
-        await this.progressivelyShowResume()
         await this.progressivelyShowStyle(1)
-        await this.showHtml()
         await this.progressivelyShowStyle(2)
+        await this.progressivelyShowResume()
+        await this.showHtml()
       },
       showHtml: function () {
         return new Promise((resolve, reject) => {
@@ -196,7 +109,7 @@ Fork [我的项目](https://github.com/jirengu-inc/animating-resume)，打造你
               let l = this.currentStyle.length - prefixLength
               let char = style.substring(l, l + 1) || ' '
               this.currentStyle += char
-              if (style.substring(l - 1, l) === '\n' && this.$refs.styleEditor) {
+              if (style.substring(l - 1, l) === '\n') {
                 this.$nextTick(() => {
                   this.$refs.styleEditor.goBottom()
                 })
