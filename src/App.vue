@@ -28,8 +28,6 @@ export default {
       fullStyle: [
         `
 const name = 'Nova Cheng';
-const contactNumber = '+65 9725 0275'; // whatsapp please
-const email = 'chy.huiyuan@gmail.com';
 const githubAccount = 'https://github.com/chenghuiyuan';
 const stackoverflowAccount = 'https://stackoverflow.com/users/11929921/cheng-hui-yuan';
 
